@@ -13,25 +13,20 @@ namespace Intcrementor
             DocumentView docView = await VS.Documents.GetActiveDocumentViewAsync();
             if (docView?.TextView == null) return;
 
-            //======== TEST AREA ========//
-
-            var lines = docView.TextView.TextViewLines.ToList();
-            string PATTERN = @"\b\d{1,2}\b";
-            foreach (var line in lines)
+            const string PATTERN = @"\b\d{1,2}\b";
+            var text = docView.TextView.TextSnapshot.GetText();
+            var matches = Regex.Matches(text, PATTERN);
+            if (matches.Count > 0)
             {
-                var match = Regex.Match(line.Snapshot.GetText(), PATTERN);
-                if (match.Success)
+                foreach (Match match in matches)
                 {
-                    var point = new SnapshotPoint(line.Snapshot, match.Index);
+                    var point = new SnapshotPoint(docView.TextView.TextSnapshot, match.Index);
                     docView.TextView.Caret.MoveTo(point);
                     SnapshotSpan span = new SnapshotSpan(point, match.Length);
                     docView.TextView.Selection.Select(span, false);
                     Increment(docView);
-                    //Need to figure out how to select the position + length of integer value then can increment!
                 }
             }
-
-            //======== TEST AREA ========//
         }
 
         private void Increment(DocumentView docView)
