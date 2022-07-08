@@ -1,41 +1,51 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-  <Extern href="stdidcmd.h"/>
-  <Extern href="vsshlids.h"/>
-  <Include href="KnownImageIds.vsct"/>
-  <Include href="VSGlobals.vsct"/>
+	<Extern href="stdidcmd.h"/>
+	<Extern href="vsshlids.h"/>
+	<Include href="KnownImageIds.vsct"/>
+	<Include href="VSGlobals.vsct"/>
 
-  <Commands package="Intcrementor">
-	<Groups>
-	  <Group guid="Intcrementor" id="IntcrementorMenuGroup" priority="0x0600">
-		<Parent guid="VSMainMenu" id="Edit"/>
-	  </Group>
-	</Groups>
+	<Commands package="Intcrementor">
+		<Groups>
+			<Group guid="Intcrementor" id="IntcrementorMenuGroup" priority="0x0600">
+				<Parent guid="VSMainMenu" id="Edit"/>
+			</Group>
+		</Groups>
 
-	<!--This section defines the elements the user can interact with, like a menu command or a button
+		<!--This section defines the elements the user can interact with, like a menu command or a button
 		or combo box in a toolbar. -->
-	<Buttons>
-	  <Button guid="Intcrementor" id="IncrementAll" priority="0x0100" type="Button">
-		<Parent guid="Intcrementor" id="IntcrementorMenuGroup" />
-			  <Icon guid="ImageCatalogGuid" id="NumericListBox" />
-		<CommandFlag>IconIsMoniker</CommandFlag>
-		<Strings>
-		  <ButtonText>Increment All</ButtonText>
-		  <LocCanonicalName>.Edit.Intcrementor</LocCanonicalName>
-		</Strings>
-	  </Button>
-	</Buttons>
-  </Commands>
+		<Buttons>
+			<Button guid="Intcrementor" id="IncrementAll" priority="0x0100" type="Button">
+				<Parent guid="Intcrementor" id="IntcrementorMenuGroup" />
+				<Icon guid="ImageCatalogGuid" id="Upload" />
+				<CommandFlag>IconIsMoniker</CommandFlag>
+				<Strings>
+					<ButtonText>Increment All</ButtonText>
+					<LocCanonicalName>.Edit.Intcrementor.IncrementAll</LocCanonicalName>
+				</Strings>
+			</Button>
+			<Button guid="Intcrementor" id="DecrementAll" priority="0x0100" type="Button">
+				<Parent guid="Intcrementor" id="IntcrementorMenuGroup" />
+					  <Icon guid="ImageCatalogGuid" id="Download" />
+				<CommandFlag>IconIsMoniker</CommandFlag>
+				<Strings>
+					<ButtonText>Decrement All</ButtonText>
+					<LocCanonicalName>.Edit.Intcrementor.DecrementAll</LocCanonicalName>
+				</Strings>
+			</Button>
+		</Buttons>
+	</Commands>
 	<!--<KeyBindings>
 		Need to figure out why the = symbol does not work below
 		<KeyBinding guid="Intcrementor" id="IncrementAll" editor="guidVSStd97" key1="=" mod1="Control" mod2="Alt" />
 	</KeyBindings>-->
 
-  <Symbols>
-	<GuidSymbol name="Intcrementor" value="{d9e840c5-4521-423b-b9ca-e04ad6b3aba0}">
-	  <IDSymbol name="IntcrementorMenuGroup" value="0x0001" />
-	  <IDSymbol name="IncrementAll" value="0x0100" />
-	</GuidSymbol>
-  </Symbols>
+	<Symbols>
+		<GuidSymbol name="Intcrementor" value="{d9e840c5-4521-423b-b9ca-e04ad6b3aba0}">
+			<IDSymbol name="IntcrementorMenuGroup" value="0x0001" />
+			<IDSymbol name="IncrementAll" value="0x0100" />
+			<IDSymbol name="DecrementAll" value="0x0101" />
+		</GuidSymbol>
+	</Symbols>
 </CommandTable>

@@ -45,6 +45,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Commands\DecrementAllCommand.cs" />
     <Compile Include="Commands\IncrementAllCommand.cs" />
     <Compile Include="Helpers\NumberHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

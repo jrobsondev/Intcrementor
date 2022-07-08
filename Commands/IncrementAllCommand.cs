@@ -20,7 +20,7 @@ namespace Intcrementor
                     SnapshotSpan span = new(point, match.Length);
                     TextView.Selection.Select(span, false);
                     SnapshotSpan selection = TextView.Selection.SelectedSpans.FirstOrDefault();
-                    NumberHelper.AdjustSelection(selection, DocView.TextBuffer, true);
+                    //NumberHelper.AdjustSelection(selection, DocView.TextBuffer, true);
                 }
             }
         }

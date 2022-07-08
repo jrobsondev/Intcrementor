@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.Text.Editor;
+﻿using Microsoft.VisualStudio.Text;
+using Microsoft.VisualStudio.Text.Editor;
 using System.Text.RegularExpressions;
 
 namespace Intcrementor
@@ -11,6 +12,7 @@ namespace Intcrementor
         protected IWpfTextView TextView { get; private set; }
         protected string DocumentText { get; private set; }
         protected MatchCollection IntMatches { get; private set; }
+        protected IMultiSelectionBroker SelectionBroker { get; private set; }
 
         protected override async Task ExecuteAsync(OleMenuCmdEventArgs e)
         {
@@ -19,6 +21,7 @@ namespace Intcrementor
             if (DocView?.TextView == null) return;
 
             TextView = DocView.TextView;
+            SelectionBroker = TextView.GetMultiSelectionBroker();
             DocumentText = TextView.TextSnapshot.GetText();
             IntMatches = Regex.Matches(DocumentText, PATTERN);
         }
