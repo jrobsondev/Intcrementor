@@ -45,8 +45,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Commands\IncrementAllCommand.cs" />
+    <Compile Include="Helpers\NumberHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Commands\MyCommand.cs" />
+    <Compile Include="Commands\IntcrementCommandBase.cs" />
     <Compile Include="IntcrementorPackage.cs" />
     <Compile Include="source.extension.cs">
       <AutoGen>True</AutoGen>

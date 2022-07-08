@@ -20,7 +20,7 @@ namespace Intcrementor
     /// </summary>
     internal sealed partial class PackageIds
     {
-        public const int MyMenuGroup = 0x0001;
-        public const int MyCommand = 0x0100;
+        public const int IntcrementorMenuGroup = 0x0001;
+        public const int IncrementAll = 0x0100;
     }
 }

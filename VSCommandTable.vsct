@@ -8,7 +8,7 @@
 
   <Commands package="Intcrementor">
 	<Groups>
-	  <Group guid="Intcrementor" id="MyMenuGroup" priority="0x0600">
+	  <Group guid="Intcrementor" id="IntcrementorMenuGroup" priority="0x0600">
 		<Parent guid="VSMainMenu" id="Edit"/>
 	  </Group>
 	</Groups>
@@ -16,22 +16,26 @@
 	<!--This section defines the elements the user can interact with, like a menu command or a button
 		or combo box in a toolbar. -->
 	<Buttons>
-	  <Button guid="Intcrementor" id="MyCommand" priority="0x0100" type="Button">
-		<Parent guid="Intcrementor" id="MyMenuGroup" />
+	  <Button guid="Intcrementor" id="IncrementAll" priority="0x0100" type="Button">
+		<Parent guid="Intcrementor" id="IntcrementorMenuGroup" />
 			  <Icon guid="ImageCatalogGuid" id="NumericListBox" />
 		<CommandFlag>IconIsMoniker</CommandFlag>
 		<Strings>
-		  <ButtonText>Intcrementor</ButtonText>
+		  <ButtonText>Increment All</ButtonText>
 		  <LocCanonicalName>.Edit.Intcrementor</LocCanonicalName>
 		</Strings>
 	  </Button>
 	</Buttons>
   </Commands>
+	<!--<KeyBindings>
+		Need to figure out why the = symbol does not work below
+		<KeyBinding guid="Intcrementor" id="IncrementAll" editor="guidVSStd97" key1="=" mod1="Control" mod2="Alt" />
+	</KeyBindings>-->
 
   <Symbols>
 	<GuidSymbol name="Intcrementor" value="{d9e840c5-4521-423b-b9ca-e04ad6b3aba0}">
-	  <IDSymbol name="MyMenuGroup" value="0x0001" />
-	  <IDSymbol name="MyCommand" value="0x0100" />
+	  <IDSymbol name="IntcrementorMenuGroup" value="0x0001" />
+	  <IDSymbol name="IncrementAll" value="0x0100" />
 	</GuidSymbol>
   </Symbols>
 </CommandTable>
