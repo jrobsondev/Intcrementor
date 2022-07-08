@@ -11,18 +11,7 @@ namespace Intcrementor
         protected override async Task ExecuteAsync(OleMenuCmdEventArgs e)
         {
             await base.ExecuteAsync(e);
-            if (IntMatches.Count > 0)
-            {
-                foreach (Match match in IntMatches)
-                {
-                    SnapshotPoint point = new (TextView.TextSnapshot, match.Index);
-                    TextView.Caret.MoveTo(point);
-                    SnapshotSpan span = new(point, match.Length);
-                    TextView.Selection.Select(span, false);
-                    SnapshotSpan selection = TextView.Selection.SelectedSpans.FirstOrDefault();
-                    //NumberHelper.AdjustSelection(selection, DocView.TextBuffer, true);
-                }
-            }
+            await GetSelectionsAndAdjustAsync(() => SelectionBroker.PerformActionOnAllSelections(x => NumberHelper.AdjustSelection(x.Selection, DocView.TextBuffer, true)), "Incrementing all numbers");
         }
     }
 }
