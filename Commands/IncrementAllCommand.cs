@@ -1,7 +1,4 @@
 ﻿using Intcrementor.Helpers;
-using Microsoft.VisualStudio.Text;
-using System.Linq;
-using System.Text.RegularExpressions;
 
 namespace Intcrementor
 {
