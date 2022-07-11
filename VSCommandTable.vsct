@@ -25,13 +25,22 @@
 					<LocCanonicalName>.Edit.Intcrementor.IncrementAll</LocCanonicalName>
 				</Strings>
 			</Button>
-			<Button guid="Intcrementor" id="DecrementAll" priority="0x0100" type="Button">
+			<Button guid="Intcrementor" id="DecrementAll" priority="0x0101" type="Button">
 				<Parent guid="Intcrementor" id="IntcrementorMenuGroup" />
 					  <Icon guid="ImageCatalogGuid" id="Download" />
 				<CommandFlag>IconIsMoniker</CommandFlag>
 				<Strings>
 					<ButtonText>Decrement All</ButtonText>
 					<LocCanonicalName>.Edit.Intcrementor.DecrementAll</LocCanonicalName>
+				</Strings>
+			</Button>
+			<Button guid="Intcrementor" id="RangeDialog" priority="0x0102" type="Button">
+				<Parent guid="Intcrementor" id="IntcrementorMenuGroup" />
+				<Icon guid="ImageCatalogGuid" id="PopupControl" />
+				<CommandFlag>IconIsMoniker</CommandFlag>
+				<Strings>
+					<ButtonText>Edit Range</ButtonText>
+					<LocCanonicalName>.Edit.Intcrementor.RangeDialog</LocCanonicalName>
 				</Strings>
 			</Button>
 		</Buttons>
@@ -46,6 +55,7 @@
 			<IDSymbol name="IntcrementorMenuGroup" value="0x0001" />
 			<IDSymbol name="IncrementAll" value="0x0100" />
 			<IDSymbol name="DecrementAll" value="0x0101" />
+			<IDSymbol name="RangeDialog" value="0x0102" />
 		</GuidSymbol>
 	</Symbols>
 </CommandTable>

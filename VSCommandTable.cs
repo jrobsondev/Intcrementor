@@ -23,5 +23,6 @@ namespace Intcrementor
         public const int IntcrementorMenuGroup = 0x0001;
         public const int IncrementAll = 0x0100;
         public const int DecrementAll = 0x0101;
+        public const int RangeDialog = 0x0102;
     }
 }
