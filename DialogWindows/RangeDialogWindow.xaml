@@ -28,12 +28,12 @@
             <RowDefinition Height="5"/>
         </Grid.RowDefinitions>
         <Label Grid.Column="1" Grid.Row="1" Content="Start" VerticalContentAlignment="Center" />
-        <xctk:IntegerUpDown Grid.Column="2" Grid.Row="1" Name="startNTBControl" Value="{Binding startNTBControlValue}" Minimum="{Binding startNTBControlMinValue}" Maximum="{Binding startNTBControlMaxValue}" Margin="0,2,0,2"/>
+        <xctk:IntegerUpDown Grid.Column="2" Grid.Row="1" Name="startNTBControl" Value="{Binding StartNTBControlValue}" Minimum="{Binding StartNTBControlMinValue}" Maximum="{Binding EndNTBControlValue}" Margin="0,2,0,2"/>
         <Label Grid.Column="1" Grid.Row="2" Content="End" VerticalContentAlignment="Center" />
-        <xctk:IntegerUpDown Grid.Column="2" Grid.Row="2" Name="endNTBControl" Value="{Binding endNTBControlValue}" Minimum="{Binding endNTBControlMinValue}" Maximum="{Binding endNTBControlMaxValue}" Margin="0,2,0,2" />
+        <xctk:IntegerUpDown Grid.Column="2" Grid.Row="2" Name="endNTBControl" Value="{Binding EndNTBControlValue}" Minimum="{Binding StartNTBControlValue}" Maximum="{Binding EndNTBControlMaxValue}" Margin="0,2,0,2" />
         <Label Grid.Column="1" Grid.Row="3" Content="Step" VerticalContentAlignment="Center" />
-        <xctk:IntegerUpDown Grid.Column="2" Grid.Row="3" Name="stepNTBControl" Value="{Binding stepNTBControlValue}" Minimum="{Binding stepNTBControlMinValue}" Maximum="{Binding stepNTBControlMaxValue}" Margin="0,2,0,2" />
+        <xctk:IntegerUpDown Grid.Column="2" Grid.Row="3" Name="stepNTBControl" Value="{Binding StepNTBControlValue}" Margin="0,2,0,2" />
         <Button Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2" Name="cancelButton" Content="Cancel" Width="50" HorizontalAlignment="Left" />
-        <Button Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2" Name="goButton" Content="GO" Width="50" HorizontalAlignment="Right"/>
+        <Button Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2" Name="goButton" Content="GO" Width="50" HorizontalAlignment="Right" Click="goButton_Click"/>
     </Grid>
 </platform:DialogWindow>

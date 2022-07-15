@@ -8,7 +8,7 @@ namespace Intcrementor
         protected override async Task ExecuteAsync(OleMenuCmdEventArgs e)
         {
             await base.ExecuteAsync(e);
-            RangeDialogWindow dialog = new();
+            RangeDialogWindow dialog = new(this);
             dialog.ShowModal();
         }
     }

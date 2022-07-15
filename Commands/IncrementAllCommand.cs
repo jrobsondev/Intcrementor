@@ -1,6 +1,4 @@
-﻿using Intcrementor.Helpers;
-
-namespace Intcrementor
+﻿namespace Intcrementor
 {
     [Command(PackageIds.IncrementAll)]
     internal class IncrementAllCommand : IntcrementCommandBase<IncrementAllCommand>
@@ -8,7 +6,7 @@ namespace Intcrementor
         protected override async Task ExecuteAsync(OleMenuCmdEventArgs e)
         {
             await base.ExecuteAsync(e);
-            await GetSelectionsAndAdjustAsync(() => SelectionBroker.PerformActionOnAllSelections(x => NumberHelper.AdjustSelection(x.Selection, DocView.TextBuffer, true)), "Incrementing all numbers");
+            await Manager.GetSelectionsAndAdjustAsync(Manager.GetIntegersInDocViewAsMatchList(), () => Manager.SelectionBroker.PerformActionOnAllSelections(x => Manager.AdjustSelection(x.Selection, 1)), "Incrementing all numbers");
         }
     }
 }
