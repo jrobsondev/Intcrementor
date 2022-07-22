@@ -102,6 +102,7 @@ namespace Intcrementor.DialogWindows
         {
             var matches = _regexMatchList.Where(x => int.Parse(x.Value) >= StartNTBControlValue && int.Parse(x.Value) <= EndNTBControlValue).ToList();
             await _manager.GetSelectionsAndAdjustAsync(matches, () => _manager.SelectionBroker.PerformActionOnAllSelections(x => _manager.AdjustSelection(x.Selection, StepNTBControlValue)), $"Incrementing numbers from {StartNTBControlValue} to {EndNTBControlValue} by {StepNTBControlValue}");
+            Close();
         }
     }
 }

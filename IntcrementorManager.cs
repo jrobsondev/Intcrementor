@@ -10,7 +10,7 @@ namespace Intcrementor
 {
     public class IntcrementorManager
     {
-        private const string PATTERN_FORMAT_STRING = @"\b\d{{1,{0}}}\b";
+        private const string PATTERN_FORMAT_STRING = @"-?\b\d{{1,{0}}}\b";
         private readonly DocumentView _DocView;
         private readonly IWpfTextView _TextView;
         private readonly string _DocumentText;
