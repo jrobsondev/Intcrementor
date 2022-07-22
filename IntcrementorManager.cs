@@ -1,10 +1,10 @@
-﻿using Microsoft.VisualStudio.Text;
+﻿using Intcrementor.Options;
+using Microsoft.VisualStudio.Text;
 using Microsoft.VisualStudio.Text.Editor;
 using Microsoft.VisualStudio.Text.Operations;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
-using Intcrementor.Options;
 
 namespace Intcrementor
 {
@@ -62,10 +62,12 @@ namespace Intcrementor
                 {
                     action.Invoke();
                     undoContext.Complete();
+                    await VS.StatusBar.ShowMessageAsync($"Successfully updated: {matches.Count} numbers");
                 }
-                catch
+                catch (Exception ex)
                 {
                     undoContext.Dispose();
+                    await ErrorHandler.ShowErrorNotificationAsync(ex);
                 }
             }
         }

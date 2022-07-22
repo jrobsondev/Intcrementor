@@ -48,6 +48,7 @@
     <Compile Include="Commands\RangeDialogCommand.cs" />
     <Compile Include="Commands\DecrementAllCommand.cs" />
     <Compile Include="Commands\IncrementAllCommand.cs" />
+    <Compile Include="ErrorHandler.cs" />
     <Compile Include="IntcrementorManager.cs" />
     <Compile Include="Options\Options\General.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
