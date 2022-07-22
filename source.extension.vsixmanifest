@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="Intcrementor.7be5ed0a-d55a-4700-a4f2-e59de9d0cf89" Version="1.0" Language="en-US" Publisher="Company" />
+        <Identity Id="Intcrementor.7be5ed0a-d55a-4700-a4f2-e59de9d0cf89" Version="0.1" Language="en-US" Publisher="JRobsonDev" />
         <DisplayName>Intcrementor</DisplayName>
-        <Description xml:space="preserve">Empty VSIX Project.</Description>
+        <Description xml:space="preserve">An extensions to help increment/decrement numbers in a file by a specified amount.</Description>
         <Icon>Resources\Icon.png</Icon>
         <PreviewImage>Resources\Icon.png</PreviewImage>
     </Metadata>

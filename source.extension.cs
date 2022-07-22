@@ -9,10 +9,10 @@ namespace Intcrementor
     {
         public const string Id = "Intcrementor.7be5ed0a-d55a-4700-a4f2-e59de9d0cf89";
         public const string Name = "Intcrementor";
-        public const string Description = @"Empty VSIX Project.";
+        public const string Description = @"An extensions to help increment/decrement numbers in a file by a specified amount.";
         public const string Language = "en-US";
-        public const string Version = "1.0";
-        public const string Author = "Company";
+        public const string Version = "0.1";
+        public const string Author = "JRobsonDev";
         public const string Tags = "";
     }
 }
