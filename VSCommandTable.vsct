@@ -45,10 +45,11 @@
 			</Button>
 		</Buttons>
 	</Commands>
-	<!--<KeyBindings>
-		Need to figure out why the = symbol does not work below
-		<KeyBinding guid="Intcrementor" id="IncrementAll" editor="guidVSStd97" key1="=" mod1="Control" mod2="Alt" />
-	</KeyBindings>-->
+	<KeyBindings>
+		<KeyBinding guid="Intcrementor" id="IncrementAll" editor="guidVSStd97" key1="VK_ADD" mod1="Control" />
+		<KeyBinding guid="Intcrementor" id="DecrementAll" editor="guidVSStd97" key1="VK_SUBTRACT" mod1="Control" />
+		<KeyBinding guid="Intcrementor" id="RangeDialog" editor="guidVSStd97" key1="VK_MULTIPLY" mod1="Control" />
+	</KeyBindings>
 
 	<Symbols>
 		<GuidSymbol name="Intcrementor" value="{d9e840c5-4521-423b-b9ca-e04ad6b3aba0}">
