@@ -9,9 +9,8 @@ namespace Intcrementor.DialogWindows
 {
     public partial class RangeDialogWindow : DialogWindow, INotifyPropertyChanged
     {
-        private List<Match> _regexMatchList;
+        private readonly List<Match> _regexMatchList;
         private readonly List<int> _integerMatchList;
-        private const int DEFAULT_STEP_VALUE = 1;
         private readonly IntcrementorManager _manager;
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -96,10 +95,10 @@ namespace Intcrementor.DialogWindows
             EndNTBControlValue = _integerMatchList.Max();
             EndNTBControlMaxValue = _integerMatchList.Max();
 
-            StepNTBControlValue = DEFAULT_STEP_VALUE; //TODO: Get this value from options
+            StepNTBControlValue = _manager.Options.DefaultStepValue;
         }
 
-        private async void goButton_Click(object sender, System.Windows.RoutedEventArgs e)
+        private async void GoButton_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             var matches = _regexMatchList.Where(x => int.Parse(x.Value) >= StartNTBControlValue && int.Parse(x.Value) <= EndNTBControlValue).ToList();
             await _manager.GetSelectionsAndAdjustAsync(matches, () => _manager.SelectionBroker.PerformActionOnAllSelections(x => _manager.AdjustSelection(x.Selection, StepNTBControlValue)), $"Incrementing numbers from {StartNTBControlValue} to {EndNTBControlValue} by {StepNTBControlValue}");

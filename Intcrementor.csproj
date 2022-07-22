@@ -49,6 +49,7 @@
     <Compile Include="Commands\DecrementAllCommand.cs" />
     <Compile Include="Commands\IncrementAllCommand.cs" />
     <Compile Include="IntcrementorManager.cs" />
+    <Compile Include="Options\Options\General.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Commands\IntcrementCommandBase.cs" />
     <Compile Include="IntcrementorPackage.cs" />
@@ -60,6 +61,7 @@
     <Compile Include="DialogWindows\RangeDialogWindow.xaml.cs">
       <DependentUpon>RangeDialogWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Validators.cs" />
     <Compile Include="VSCommandTable.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

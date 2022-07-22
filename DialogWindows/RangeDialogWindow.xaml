@@ -33,7 +33,6 @@
         <xctk:IntegerUpDown Grid.Column="2" Grid.Row="2" Name="endNTBControl" Value="{Binding EndNTBControlValue}" Minimum="{Binding StartNTBControlValue}" Maximum="{Binding EndNTBControlMaxValue}" Margin="0,2,0,2" />
         <Label Grid.Column="1" Grid.Row="3" Content="Step" VerticalContentAlignment="Center" />
         <xctk:IntegerUpDown Grid.Column="2" Grid.Row="3" Name="stepNTBControl" Value="{Binding StepNTBControlValue}" Margin="0,2,0,2" />
-        <Button Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2" Name="cancelButton" Content="Cancel" Width="50" HorizontalAlignment="Left" />
-        <Button Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2" Name="goButton" Content="GO" Width="50" HorizontalAlignment="Right" Click="goButton_Click"/>
+        <Button Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2" Name="goButton" Content="GO" Width="70" HorizontalAlignment="Right" Click="GoButton_Click"/>
     </Grid>
 </platform:DialogWindow>

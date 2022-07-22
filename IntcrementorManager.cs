@@ -4,26 +4,32 @@ using Microsoft.VisualStudio.Text.Operations;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Intcrementor.Options;
 
 namespace Intcrementor
 {
     public class IntcrementorManager
     {
-        private const string PATTERN = @"\b\d{1,2}\b";
+        private const string PATTERN_FORMAT_STRING = @"\b\d{{1,{0}}}\b";
         private readonly DocumentView _DocView;
         private readonly IWpfTextView _TextView;
         private readonly string _DocumentText;
-        public IMultiSelectionBroker SelectionBroker { get; }
+        private readonly string _IntegerMatchPattern;
 
-        public IntcrementorManager(DocumentView docView)
+        public IntcrementorManager(DocumentView docView, General options)
         {
             _DocView = docView;
             _TextView = _DocView.TextView;
-            SelectionBroker = _TextView.GetMultiSelectionBroker();
             _DocumentText = _TextView.TextSnapshot.GetText();
+            _IntegerMatchPattern = string.Format(PATTERN_FORMAT_STRING, options.MaxIntegerLength);
+            SelectionBroker = _TextView.GetMultiSelectionBroker();
+            Options = options;
         }
 
-        public List<Match> GetIntegersInDocViewAsMatchList() => Regex.Matches(_DocumentText, PATTERN).Cast<Match>().ToList();
+        public IMultiSelectionBroker SelectionBroker { get; }
+        public General Options { get; }
+
+        public List<Match> GetIntegersInDocViewAsMatchList() => Regex.Matches(_DocumentText, _IntegerMatchPattern).Cast<Match>().ToList();
 
         internal void AdjustSelection(Microsoft.VisualStudio.Text.Selection selection, int adjustmentStep)
         {
